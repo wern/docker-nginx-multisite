@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  nginx-router:
+    image: wern-nginx-proxy 
+    ports:
+      - "7000:80" 
+    links: 
+      - "nginx-hello:hello"
+      - "nginx-wern:wern"
+  nginx-hello:
+    image: wern-nginx-hello
+    ports: 
+      - "7100:80"
+  nginx-wern:
+    image: wern-nginx-wern
+    ports: 
+      - "7200:80"
