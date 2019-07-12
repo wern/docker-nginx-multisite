@@ -10,6 +10,8 @@ Small project to setup a dockerized multiwebsite scenario using nginx.
 Add the following entry to your `/etc/hosts` file:
 `127.0.0.1 hello.localhost wern.localhost`
 
+Build the docker images using [build-images.sh](./build-images.sh).
+
 Change directory into `nginx-proxy` and run `docker-compose up -d` to start the reverse proxy (`nginx-proxy`) and the two sample website container (`nginx-hello` and `nginx-wern`).
 
 You can now access [the Proxy directly](http://localhost:7000), the two websites through the proxy ([hello](http://hello.localhost:7000), [wern](http://wern.localhost:7000)) and - for debugging purpose - the two websites directly ([hello](http://hello.localhost:7100), [wern](http://wern.localhost:7200)).
